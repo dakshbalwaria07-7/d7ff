@@ -1,0 +1,459 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>D7 FF</title><style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;user-select:none;-webkit-tap-highlight-color:transparent}
+body{background:#05050a;color:#fff;min-height:100vh;padding-bottom:80px;overflow-x:hidden}
+.hidden{display:none!important}
+.h{background:linear-gradient(135deg,#0a0a1f,#001a4d);padding:14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,102,255,.4);position:sticky;top:0;z-index:100}
+.bm{font-size:26px;font-weight:900;background:linear-gradient(180deg,#fff,#00ccff 45%,#0066FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.bs{font-size:10px;font-weight:900;letter-spacing:5px;color:#00ccff;margin-top:2px}
+.wb{background:linear-gradient(135deg,#0066FF,#00ccff);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold}
+.c{padding:16px;padding-bottom:90px}
+.st{font-size:17px;font-weight:900;margin:10px 0 14px;display:flex;align-items:center;gap:8px}
+.st::before{content:"";width:4px;height:20px;background:linear-gradient(180deg,#00ccff,#0066FF);border-radius:4px}
+.card{background:linear-gradient(145deg,#0d1220,#0a0d18);border:1px solid rgba(0,100,255,.25);border-radius:14px;padding:16px;margin-bottom:14px}
+.card.free{border:1px solid rgba(0,255,120,.5)}
+.tb{display:inline-block;font-size:10px;font-weight:900;padding:3px 10px;border-radius:20px;margin-bottom:8px;text-transform:uppercase}
+.tb.free{background:linear-gradient(135deg,#00ff88,#00cc66);color:#003318}
+.tb.paid{background:linear-gradient(135deg,#0066FF,#00aaff);color:#fff}
+.card h3{font-size:15px;font-weight:800;margin-bottom:10px}
+.tags{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap}
+.tag{font-size:10px;padding:3px 9px;border-radius:6px;font-weight:700}
+.ts{background:rgba(180,50,220,.25);color:#d070ff}
+.tm{background:rgba(255,150,0,.2);color:#ffb040}
+.tt{background:rgba(255,255,255,.1);color:#fff}
+.sr{display:flex;padding:10px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:10px}
+.s{text-align:center;flex:1}
+.sl{font-size:10px;color:#8899bb;text-transform:uppercase}
+.sv{font-size:14px;font-weight:900;margin-top:3px}
+.sv.g{color:#00ff88}
+.sv.b{color:#00ccff}
+.jb{width:100%;padding:11px;border:none;border-radius:10px;font-weight:900;font-size:13px;cursor:pointer;text-transform:uppercase}
+.jb.free{background:linear-gradient(135deg,#00ff88,#00cc66);color:#003318}
+.jb.paid{background:linear-gradient(135deg,#0066FF,#00aaff);color:#fff}
+.jb.full{background:#444;color:#999;cursor:not-allowed}
+.jb.joined{background:linear-gradient(135deg,#00cc66,#009944);color:#fff;cursor:not-allowed}
+.row2{display:flex;gap:8px;margin-top:8px}
+.row2 button{flex:1}
+.wh{background:linear-gradient(145deg,#0a1428,#001a4d);border:1px solid rgba(0,150,255,.4);border-radius:18px;padding:24px;text-align:center;margin-bottom:18px}
+.wh .lbl{color:#8899bb;font-size:12px;text-transform:uppercase;margin-bottom:8px}
+.wh .bal{font-size:42px;font-weight:900;color:#00ccff;margin-bottom:4px}
+.ab{padding:16px;border:none;border-radius:12px;font-weight:900;font-size:14px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;text-transform:uppercase;width:100%;margin-bottom:12px}
+.ab .ic{font-size:22px;background:rgba(255,255,255,.15);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.ab.dep{background:linear-gradient(135deg,#0066FF,#00aaff);color:#fff}
+.ab.wd{background:linear-gradient(135deg,#00ff88,#00cc66);color:#003318}
+.ab.rd{background:linear-gradient(135deg,#ffaa00,#ff6600);color:#fff}
+.pc{background:#0d1220;border:1px solid rgba(0,100,255,.25);border-radius:16px;padding:24px;text-align:center;margin-bottom:16px}
+.av{width:80px;height:80px;background:linear-gradient(135deg,#0066FF,#00ccff);border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:36px}
+.pc h3{font-size:18px;font-weight:900;margin-bottom:4px}
+.pc p{font-size:12px;color:#8899bb}
+.ml{background:#0d1220;border:1px solid rgba(0,100,255,.2);border-radius:14px;overflow:hidden}
+.mi{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;color:#d0d8e8;font-size:14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+.mi:last-child{border-bottom:none}
+.mi.log{color:#ff5555}
+.bn{position:fixed;bottom:0;left:0;width:100%;background:#0a0d18;border-top:1px solid rgba(0,100,255,.4);display:flex;justify-content:space-around;padding:10px 0 12px;z-index:100}
+.ni{text-align:center;color:#667799;font-size:10px;font-weight:700;cursor:pointer;flex:1;text-transform:uppercase}
+.ni .nic{display:block;font-size:22px;margin-bottom:3px}
+.ni.active{color:#00ccff}
+.sec{display:none}
+.sec.active{display:block}
+.mo{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;z-index:200;padding:16px;overflow-y:auto}
+.mb{background:#0d1220;border:1px solid rgba(0,150,255,.4);border-radius:18px;padding:20px;width:100%;max-width:420px;text-align:center;margin:auto}
+.mb h2{font-size:18px;font-weight:900;margin-bottom:6px;color:#00ccff}
+.mb p{font-size:12px;color:#8899bb;margin-bottom:14px}
+.qr{width:170px;height:170px;margin:0 auto 14px;background:#fff;border-radius:12px;overflow:hidden}
+.qr img{width:100%;height:100%}
+.upi{background:rgba(0,102,255,.15);border:1px solid rgba(0,150,255,.4);padding:10px;border-radius:8px;font-size:13px;font-weight:bold;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.upi button{background:#0066FF;border:none;color:#fff;padding:5px 10px;border-radius:5px;font-size:11px;cursor:pointer}
+.ig{margin-bottom:12px;text-align:left}
+.ig label{display:block;font-size:11px;color:#8899bb;margin-bottom:5px;font-weight:600}
+.ig input,.ig select,.ig textarea{width:100%;padding:11px;background:#0a0d18;border:1px solid rgba(0,100,255,.3);border-radius:8px;color:#fff;font-size:13px}
+.mbtn{width:100%;padding:13px;border:none;border-radius:10px;font-weight:900;font-size:13px;cursor:pointer;text-transform:uppercase;margin-top:8px}
+.mbtn.p{background:linear-gradient(135deg,#0066FF,#00aaff);color:#fff}
+.mbtn.g{background:linear-gradient(135deg,#00ff88,#00cc66);color:#003318}
+.mbtn.r{background:rgba(255,255,255,.1);color:#fff}
+.mbtn.o{background:linear-gradient(135deg,#ffaa00,#ff6600);color:#fff}
+.ah{background:linear-gradient(135deg,#1a0000,#4d0000)}
+.ah .bm{background:linear-gradient(180deg,#fff,#ff5555 45%,#ff0000);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ah .bs{color:#ff5555}
+.abadge{background:rgba(255,0,0,.2);border:1px solid #ff4444;color:#ff4444;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:bold}
+.tabs{display:flex;gap:5px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
+.tab{padding:9px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#8899bb;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap}
+.tab.on{background:rgba(255,0,0,.2);border-color:#ff4444;color:#fff}
+.ac{background:#0d1220;border:1px solid rgba(255,50,50,.2);border-radius:12px;padding:14px;margin-bottom:12px}
+.ac h4{font-size:14px;margin-bottom:8px;color:#ff5555}
+.ac p{font-size:12px;color:#8899bb;margin-bottom:4px}
+.abtn{padding:9px 12px;border:none;border-radius:8px;font-weight:bold;font-size:11px;cursor:pointer;margin:3px 3px 0 0}
+.abtn.add{background:#0066FF;color:#fff}
+.abtn.ap{background:#00cc66;color:#fff}
+.abtn.rj{background:#ff4444;color:#fff}
+.abtn.ed{background:#ffaa00;color:#000}
+.abtn.full{width:100%;padding:13px;font-size:13px;margin-top:8px}
+.poster{background:linear-gradient(135deg,#ff0066,#ff5500,#ffaa00);border-radius:14px;padding:18px;margin-bottom:14px;text-align:center;cursor:pointer}
+.poster h3{font-size:18px;font-weight:900;margin-bottom:4px}
+.poster p{font-size:11px;margin-bottom:10px}
+.poster button{background:#fff;color:#ff0066;border:none;padding:7px 18px;border-radius:8px;font-weight:900;font-size:12px;cursor:pointer}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat-box{background:rgba(255,255,255,.05);border-radius:10px;padding:10px;text-align:center}
+.stat-box .num{font-size:20px;font-weight:900;color:#00ff88}
+.stat-box .lb{font-size:10px;color:#8899bb;text-transform:uppercase;margin-top:3px}
+.shot-preview{max-width:100%;max-height:280px;border-radius:10px;border:2px solid #0066FF;margin-bottom:8px}
+.bonus-hero{background:linear-gradient(135deg,#ff0066,#ff5500);border-radius:18px;padding:24px;text-align:center;margin-bottom:16px}
+.bonus-hero h2{font-size:24px;font-weight:900;margin-bottom:6px}
+.bonus-hero p{font-size:13px;margin-bottom:14px}
+.bonus-hero button{background:#fff;color:#ff0066;border:none;padding:12px 24px;border-radius:10px;font-weight:900;font-size:14px;cursor:pointer;text-transform:uppercase}
+.bonus-hero button:disabled{background:#666;color:#333;cursor:not-allowed}
+.ff-banner{border-radius:14px;padding:18px;margin-bottom:12px;cursor:pointer;background:linear-gradient(135deg,#ffcc00,#ff6600)}
+.ff-banner h3{font-size:16px;font-weight:900;margin-bottom:4px}
+.ff-banner p{font-size:11px;margin-bottom:8px}
+.ff-banner .tag-line{display:inline-block;background:rgba(255,255,255,.25);padding:3px 10px;border-radius:20px;font-size:10px;font-weight:bold}
+.empty{text-align:center;color:#556688;font-size:13px;padding:20px}
+.prize-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.prize-row:last-child{border-bottom:none}
+</style></head><body>
+  <div id="playerApp">
+<div class="h"><div><div class="bm">D7 FF</div><div class="bs">TOURNAMENTS</div></div><div class="wb" id="walletBadge">Rs 0</div></div>
+
+<div id="home" class="sec active"><div class="c">
+<div class="poster" onclick="openMo('refMo')"><h3>🎁 Refer & Earn</h3><p>दोस्त को रेफर करो, Rs 20 कमाओ!</p><button>Invite Now</button></div>
+<div class="ff-banner" id="monthlyBanner" onclick="openMonthlyJoin()"><h3>🏆 Monthly Tournament</h3><p id="monthlyInfo">Last Sunday of every month | Big Prize Pool</p><span class="tag-line">COMING SOON</span></div>
+<div class="st">Upcoming Tournaments</div>
+<div id="tournamentList"></div>
+</div></div>
+
+<div id="wallet" class="sec"><div class="c">
+<div class="wh"><div class="lbl">Total Balance</div><div class="bal" id="walletBal">Rs 0</div></div>
+<button class="ab dep" onclick="openMo('depMo')"><span class="ic">+</span><span>Add Money (Deposit)</span></button>
+<button class="ab wd" onclick="openMo('wdMo')"><span class="ic">Rs</span><span>Withdraw Money</span></button>
+<button class="ab rd" onclick="openMo('redeemMo')"><span class="ic">🎟️</span><span>Redeem Code</span></button>
+<div class="st" style="margin-top:18px">My Redeem Requests</div>
+<div id="myRedeemList" class="empty">No redeem requests yet</div>
+<div class="st" style="margin-top:18px">My Tournaments</div>
+<div id="myTours" class="empty">No tournaments joined yet</div>
+</div></div>
+
+<div id="bonus" class="sec"><div class="c">
+<div class="bonus-hero"><h2>💰 Bonus Zone</h2><p id="bonusDesc">Watch ads and earn rewards</p><button id="watchAdBtn" onclick="watchAd()">Watch Ad & Earn</button><p id="bonusUsedMsg" style="display:none;font-size:12px;margin-top:10px;color:#333;font-weight:bold">Already used ✓</p></div>
+<div class="st">How It Works</div>
+<div class="ac" style="border-color:rgba(0,100,255,.3)"><h4 style="color:#00ccff">📺 Watch Ads (1 time only)</h4><p id="bonusInfo">Click "Watch Ad & Earn" button above</p></div>
+<div class="ac" style="border-color:rgba(0,100,255,.3)"><h4 style="color:#00ccff">💵 Earn Rewards</h4><p id="bonusRewardInfo">Rewards added to your wallet instantly</p></div>
+<div class="ac" style="border-color:rgba(0,100,255,.3)"><h4 style="color:#00ccff">⚠️ Only One Time</h4><p>You can use this bonus only once</p></div>
+</div></div>
+
+<div id="profile" class="sec"><div class="c">
+<div class="pc"><div class="av">👤</div><h3 id="profileName" onclick="tapCount()">Dakshu</h3><p>dakshbalwaria07@gmail.com</p></div>
+<div class="ml">
+<div class="mi" onclick="openMo('rulesMo')"><span>📜 Tournament Rules</span><span>›</span></div>
+<div class="mi" onclick="openMo('supMo')"><span>🎧 Help & Support</span><span>›</span></div>
+<div class="mi" onclick="openMo('refMo')"><span>👥 Refer & Earn</span><span>›</span></div>
+<div class="mi log" onclick="alert('Coming soon')"><span>🚪 Logout</span><span>›</span></div>
+</div></div></div>
+
+<div class="bn">
+<div class="ni active" onclick="showSec('home',this)"><span class="nic">🏠</span>Home</div>
+<div class="ni" onclick="showSec('wallet',this)"><span class="nic">💰</span>Wallet</div>
+<div class="ni" onclick="showSec('bonus',this)"><span class="nic">🎁</span>Bonus</div>
+<div class="ni" onclick="showSec('profile',this)"><span class="nic">👤</span>Profile</div>
+</div></div>
+
+<div id="depMo" class="mo hidden"><div class="mb">
+<h2>Add Money</h2><p>Minimum Rs 30 | Pay via UPI & upload screenshot</p>
+<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=upi://pay?pa=8209985543@ptsbi%26pn=D7%20FF" alt="QR"></div>
+<div class="upi"><span>8209985543@ptsbi</span><button onclick="copyUPI()">Copy</button></div>
+<div class="ig"><label>Amount (Rs) - Min 30</label><input type="number" id="depAmt" placeholder="50"></div>
+<div class="ig"><label>Upload Payment Screenshot</label><input type="file" id="depShot" accept="image/*"></div>
+<div id="depPrev"></div>
+<button class="mbtn p" onclick="submitDep()">Submit Request</button>
+<button class="mbtn r" onclick="closeMo('depMo')">Cancel</button>
+</div></div>
+
+<div id="wdMo" class="mo hidden"><div class="mb">
+<h2>Withdraw Money</h2><p>Minimum Rs 100 | Enter UPI & upload QR</p>
+<div class="ig"><label>Amount (Rs)</label><input type="number" id="wdAmt" placeholder="100"></div>
+<div class="ig"><label>Your UPI ID</label><input type="text" id="wdUpi" placeholder="yourname@upi"></div>
+<div class="ig"><label>Upload Your QR Code</label><input type="file" id="wdQr" accept="image/*"></div>
+<div id="wdPrev"></div>
+<button class="mbtn g" onclick="submitWd()">Request Withdrawal</button>
+<button class="mbtn r" onclick="closeMo('wdMo')">Cancel</button>
+</div></div>
+
+<div id="redeemMo" class="mo hidden"><div class="mb">
+<h2>🎟️ Redeem Code Request</h2><p>Enter amount & submit. Admin will send you a redeem code.</p>
+<div class="ig"><label>Amount to Redeem (Rs)</label><input type="number" id="rdAmt" placeholder="100"></div>
+<div class="ig"><label>Your WhatsApp Number</label><input type="tel" id="rdWa" placeholder="10-digit"></div>
+<div class="ig"><label>Your UPI ID (optional)</label><input type="text" id="rdUpi" placeholder="yourname@upi"></div>
+<button class="mbtn p" onclick="submitRedeem()">Submit Request</button>
+<button class="mbtn r" onclick="closeMo('redeemMo')">Cancel</button>
+</div></div>
+
+<div id="refMo" class="mo hidden"><div class="mb">
+<h2>🎁 Refer & Earn</h2><p>Share your code. When friend joins & pays Rs 30, you get Rs 20!</p>
+<div class="upi" style="justify-content:center"><span id="refCode" style="font-size:18px">D7FF12345</span></div>
+<button class="mbtn p" onclick="shareRef()">📤 Share on WhatsApp</button>
+<button class="mbtn r" onclick="closeMo('refMo')">Close</button>
+</div></div>
+
+<div id="supMo" class="mo hidden"><div class="mb">
+<h2>🎧 Help & Support</h2><p>Contact us for any issue</p>
+<div class="ig"><label>📱 Mobile</label><input type="text" value="8130399930" readonly></div>
+<div class="ig"><label>💬 WhatsApp</label><input type="text" value="9530218603" readonly></div>
+<button class="mbtn p" onclick="window.location.href='tel:8130399930'">Call Now</button>
+<button class="mbtn g" onclick="window.location.href='https://wa.me/919530218603'">WhatsApp</button>
+<button class="mbtn r" onclick="closeMo('supMo')">Close</button>
+</div></div>
+
+<div id="rulesMo" class="mo hidden"><div class="mb">
+<h2>📜 Tournament Rules</h2>
+<div id="rulesContent" style="font-size:12px;color:#ccd;text-align:left;max-height:55vh;overflow-y:auto;white-space:pre-wrap;background:rgba(0,0,0,.3);padding:12px;border-radius:8px">No rules set yet</div>
+<button class="mbtn r" onclick="closeMo('rulesMo')">Close</button>
+</div></div>
+
+<div id="ssMo" class="mo hidden"><div class="mb">
+<h2>Details</h2><div id="ssContent" style="margin:14px 0"></div>
+<button class="mbtn r" onclick="closeMo('ssMo')">Close</button>
+</div></div>
+
+<div id="positionsMo" class="mo hidden"><div class="mb">
+<h2>🏅 Prize Distribution</h2><p id="posTitle" style="color:#ffaa00;font-weight:bold"></p>
+<div id="posContent" style="margin:14px 0;text-align:left"></div>
+<button class="mbtn r" onclick="closeMo('positionsMo')">Close</button>
+</div></div>
+
+<div id="joinMo" class="mo hidden"><div class="mb">
+<h2>Join Tournament</h2><p id="joinTitle" style="color:#00ccff;font-weight:bold"></p>
+<div class="ig"><label>Free Fire UID</label><input type="text" id="jUid" placeholder="Enter FF UID"></div>
+<div class="ig"><label>In-Game Name</label><input type="text" id="jName" placeholder="Your FF name"></div>
+<div class="ig"><label>WhatsApp Number</label><input type="tel" id="jWa" placeholder="10-digit"></div>
+<button class="mbtn p" onclick="submitJoin()">Confirm Join</button>
+<button class="mbtn r" onclick="closeMo('joinMo')">Cancel</button>
+</div></div>
+
+<div id="monthlyJoinMo" class="mo hidden"><div class="mb" style="border-color:#ffaa00">
+<h2 style="color:#ffaa00">🏆 Monthly Tournament</h2>
+<p style="color:#ffcc00;font-weight:bold" id="mjTitle"></p>
+<div class="ac" style="border-color:rgba(255,170,0,.5)">
+<p style="color:#fff"><b>💰 Entry:</b> <span id="mjFee"></span></p>
+<p style="color:#fff"><b>🏆 Prize Pool:</b> <span id="mjPrize"></span></p>
+<p style="color:#fff"><b>📅 Date:</b> <span id="mjDate"></span></p>
+<p style="color:#ffcc00;font-size:11px">⭐ VIP Tournament ⭐</p>
+</div>
+<div class="ig"><label>Free Fire UID</label><input type="text" id="mjUid" placeholder="Enter FF UID"></div>
+<div class="ig"><label>In-Game Name</label><input type="text" id="mjName" placeholder="Your FF name"></div>
+<div class="ig"><label>WhatsApp Number</label><input type="tel" id="mjWa" placeholder="10-digit"></div>
+<button class="mbtn o" onclick="confirmMonthlyJoin()">⭐ Join VIP Tournament</button>
+<button class="mbtn r" onclick="closeMo('monthlyJoinMo')">Cancel</button>
+</div></div>
+
+<div id="editMo" class="mo hidden"><div class="mb">
+<h2>✏️ Edit Tournament</h2><p id="editTitle" style="color:#ffaa00;font-weight:bold"></p>
+<div class="ig"><label>Room ID</label><input type="text" id="edRoomId" placeholder="Enter Room ID"></div>
+<div class="ig"><label>Room Password</label><input type="text" id="edRoomPass" placeholder="Enter Password"></div>
+<div class="ig"><label>Prize Pool (Rs)</label><input type="number" id="edPrize" placeholder="100"></div>
+<div class="ig"><label>Per Kill (Rs)</label><input type="number" id="edKill" placeholder="5"></div>
+<div class="ig"><label>Max Slots</label><input type="number" id="edSlots" placeholder="60"></div>
+<div class="ig"><label>Date & Time</label><input type="datetime-local" id="edTime"></div>
+<button class="mbtn p" onclick="saveEdit()">Save Changes</button>
+<button class="mbtn r" onclick="closeMo('editMo')">Cancel</button>
+</div></div>
+
+<div id="monthlyEditMo" class="mo hidden"><div class="mb" style="border-color:#ffaa00">
+<h2 style="color:#ffaa00">✏️ Edit Monthly Room</h2>
+<div class="ig"><label>Room ID</label><input type="text" id="medRoomId" placeholder="Enter Room ID"></div>
+<div class="ig"><label>Room Password</label><input type="text" id="medRoomPass" placeholder="Enter Password"></div>
+<button class="mbtn o" onclick="saveMonthlyRoom()">Save Room Details</button>
+<button class="mbtn r" onclick="closeMo('monthlyEditMo')">Cancel</button>
+</div></div>
+
+<div id="adminApp" class="hidden">
+<div class="h ah"><div><div class="bm">D7 FF</div><div class="bs">ADMIN PANEL</div></div><div class="abadge">ADMIN</div></div>
+<div class="c">
+<div id="adminLogin">
+<div class="st">Admin Login</div>
+<div class="ac">
+<div class="ig"><label>Email</label><input type="email" id="admEmail" placeholder="admin email"></div>
+<div class="ig"><label>Password</label><input type="password" id="admPass" placeholder="password"></div>
+<button class="abtn add full" onclick="adminLogin()">Login</button>
+<button class="abtn rj full" onclick="closeAdmin()" style="margin-top:8px">Back</button>
+</div></div>
+
+<div id="adminDash" class="hidden">
+<div class="tabs">
+<div class="tab on" onclick="atab('over',this)">Overview</div>
+<div class="tab" onclick="atab('tours',this)">Tournaments</div>
+<div class="tab" onclick="atab('players',this)">Players</div>
+<div class="tab" onclick="atab('depos',this)">Deposits</div>
+<div class="tab" onclick="atab('wds',this)">Withdrawals</div>
+<div class="tab" onclick="atab('redeem',this)">Redeem</div>
+<div class="tab" onclick="atab('monthly',this)">Monthly</div>
+<div class="tab" onclick="atab('bonus',this)">Bonus</div>
+<div class="tab" onclick="atab('rules',this)">Rules</div>
+</div>
+
+<div id="at-over" class="atsec">
+<div class="ac"><h4>Dashboard</h4>
+<div class="stat-grid">
+<div class="stat-box"><div class="num" id="ovTours">0</div><div class="lb">Tournaments</div></div>
+<div class="stat-box"><div class="num" id="ovPlayers">0</div><div class="lb">Players</div></div>
+<div class="stat-box"><div class="num" id="ovDeps">0</div><div class="lb">Deposits</div></div>
+<div class="stat-box"><div class="num" id="ovWds">0</div><div class="lb">Withdrawals</div></div>
+<div class="stat-box"><div class="num" id="ovRedeem">0</div><div class="lb">Redeem</div></div>
+<div class="stat-box"><div class="num" id="ovRules">0</div><div class="lb">Rules</div></div>
+</div></div>
+<button class="abtn rj full" onclick="adminLogout()" style="margin-top:16px">Logout</button>
+</div>
+
+<div id="at-tours" class="atsec hidden">
+<div class="ac"><h4>Create Tournament</h4>
+<div class="ig"><label>Title</label><input type="text" id="tTitle" placeholder="Tournament name"></div>
+<div class="ig"><label>Map</label><select id="tMap"><option>Bermuda</option><option>Purgatory</option><option>Kalahari</option><option>Alpine</option><option>Nexterra</option><option>Bermuda Remastered</option><option>Solara</option><option>Iron Cage</option><option>Clash Squad Arena</option></select></div>
+<div class="ig"><label>Match Type</label><select id="tType"><option>Solo</option><option>Duo</option><option>Squad</option></select></div>
+<div class="ig"><label>Entry Type</label><select id="tEntryType" onchange="toggleFee()"><option value="free">Free</option><option value="paid">Paid</option></select></div>
+<div class="ig hidden" id="feeBox"><label>Entry Fee (Rs)</label><input type="number" id="tFee" placeholder="20"></div>
+<div class="ig"><label>Prize Pool (Rs)</label><input type="number" id="tPrize" placeholder="100"></div>
+<div class="ig"><label>Per Kill (Rs)</label><input type="number" id="tKill" placeholder="5"></div>
+<div class="ig"><label>Max Slots</label><input type="number" id="tSlots" placeholder="60"></div>
+<div class="ig"><label>Date & Time</label><input type="datetime-local" id="tTime"></div>
+<div class="ig"><label>Room ID (optional)</label><input type="text" id="tRoomId" placeholder="123456789"></div>
+<div class="ig"><label>Room Password (optional)</label><input type="text" id="tRoomPass" placeholder="abc123"></div>
+<div class="ig"><label>Prize Distribution</label></div>
+<div id="prizeList"></div>
+<button class="abtn add" onclick="addPrizeRow()" style="width:100%;margin-bottom:10px">+ Add Position</button>
+<button class="abtn add full" onclick="createTour()">Create Tournament</button>
+</div>
+<div class="ac"><h4>📋 All Tournaments</h4><div id="adminTourList">No tournaments yet</div></div>
+</div>
+
+<div id="at-players" class="atsec hidden">
+<div class="ac"><h4>👥 Joined Players</h4><div id="joinedList">No players yet</div></div>
+</div>
+
+<div id="at-depos" class="atsec hidden"><div class="ac"><h4>💰 Pending Deposits</h4><div id="depoList">No pending requests</div></div></div>
+<div id="at-wds" class="atsec hidden"><div class="ac"><h4>💸 Pending Withdrawals</h4><div id="wdList">No pending requests</div></div></div>
+
+<div id="at-redeem" class="atsec hidden">
+<div class="ac"><h4>🎟️ Redeem Code Requests</h4><div id="redeemList">No requests yet</div></div>
+</div>
+
+<div id="at-monthly" class="atsec hidden">
+<div class="ac"><h4>🏆 Monthly Tournament</h4>
+<div class="ig"><label>Title</label><input type="text" id="mTitle" placeholder="Monthly Tournament"></div>
+<div class="ig"><label>Entry Fee (Rs)</label><input type="number" id="mFee" placeholder="10"></div>
+<div class="ig"><label>Prize Pool (Rs)</label><input type="number" id="mPrize" placeholder="5000"></div>
+<div class="ig"><label>Date</label><input type="date" id="mDate"></div>
+<div class="ig"><label>Description</label><input type="text" id="mDesc" placeholder="Big Monthly Showdown"></div>
+<button class="abtn add full" onclick="saveMonthly()">Save Monthly Tournament</button>
+</div>
+<div class="ac"><h4>Current Monthly Info</h4><div id="monthlyAdminView">Not set yet</div>
+<button class="abtn ed full" onclick="openMonthlyEdit()" style="margin-top:10px">Edit Room ID & Pass</button>
+</div>
+</div>
+
+<div id="at-bonus" class="atsec hidden">
+<div class="ac"><h4>🎁 Bonus Settings</h4>
+<div class="ig"><label>Ad Link</label><input type="text" id="bAdLink" placeholder="https://your-ad-link.com"></div>
+<div class="ig"><label>Reward per Ad (Rs)</label><input type="number" id="bReward" placeholder="1"></div>
+<div class="ig"><label>Bonus Description</label><input type="text" id="bDesc" placeholder="Watch ads & earn rewards"></div>
+<button class="abtn add full" onclick="saveBonusSettings()">Save Bonus Settings</button>
+</div>
+<div class="ac"><h4>💸 Give Bonus to Player</h4>
+<div class="ig"><label>Player Name</label><input type="text" id="gbName" placeholder="Player name"></div>
+<div class="ig"><label>Amount (Rs)</label><input type="number" id="gbAmt" placeholder="10"></div>
+<div class="ig"><label>Reason</label><input type="text" id="gbReason" placeholder="Bonus"></div>
+<button class="abtn ap full" onclick="giveBonus()">Give Bonus</button>
+</div>
+<div class="ac"><h4>📜 Bonus History</h4><div id="bonusHistory">No bonuses given yet</div></div>
+</div>
+
+<div id="at-rules" class="atsec hidden"><div class="ac"><h4>📜 Tournament Rules</h4>
+<div class="ig"><label>Write rules</label><textarea id="rulesTxt" rows="8" placeholder="Write your rules..."></textarea></div>
+<button class="abtn add full" onclick="saveRules()">Save Rules</button>
+</div></div>
+
+</div></div></div>
+<script>
+var ADM_EMAIL="dakshbalwaria07@gmail.com",ADM_PASS="dakshartoons7$#@";
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var tours=load('tours',[]),deposits=load('deposits',[]),withdrawals=load('withdrawals',[]),rulesTxt=load('rulesTxt',''),myTours=load('myTours',[]),walletBal=load('walletBal',0),joinId=null,prizeRows=[],tapN=0,tapTimer=null,editId=null;
+var monthly=load('monthly',{title:'',fee:0,prize:0,date:'',desc:'',roomId:'',roomPass:''});
+var bonusSettings=load('bonusSettings',{adLink:'',reward:1,desc:'Watch ads & earn rewards'});
+var bonusHistory=load('bonusHistory',[]);
+var redeemRequests=load('redeemRequests',[]);
+var bonusUsed=load('bonusUsed',false);
+function saveAll(){save('tours',tours);save('deposits',deposits);save('withdrawals',withdrawals);save('rulesTxt',rulesTxt);save('myTours',myTours);save('walletBal',walletBal);save('monthly',monthly);save('bonusSettings',bonusSettings);save('bonusHistory',bonusHistory);save('redeemRequests',redeemRequests);save('bonusUsed',bonusUsed)}
+function showSec(id,el){document.querySelectorAll('#playerApp .sec').forEach(function(s){s.classList.remove('active')});document.getElementById(id).classList.add('active');document.querySelectorAll('.bn .ni').forEach(function(i){i.classList.remove('active')});if(el)el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function openMo(id){document.getElementById(id).classList.remove('hidden')}
+function closeMo(id){document.getElementById(id).classList.add('hidden')}
+function copyUPI(){if(navigator.clipboard){navigator.clipboard.writeText('8209985543@ptsbi').then(function(){alert('UPI ID copied!')})}else{alert('UPI: 8209985543@ptsbi')}}
+function toggleFee(){var v=document.getElementById('tEntryType').value;document.getElementById('feeBox').classList.toggle('hidden',v==='free')}
+function tapCount(){tapN++;clearTimeout(tapTimer);if(tapN>=7){tapN=0;window.location.hash='#admin'}else{tapTimer=setTimeout(function(){tapN=0},1500)}}
+function checkAdmin(){if(window.location.hash==='#admin'){document.getElementById('playerApp').classList.add('hidden');document.getElementById('adminApp').classList.remove('hidden')}else{document.getElementById('playerApp').classList.remove('hidden');document.getElementById('adminApp').classList.add('hidden');document.getElementById('adminLogin').classList.remove('hidden');document.getElementById('adminDash').classList.add('hidden');document.getElementById('admEmail').value='';document.getElementById('admPass').value=''}}
+function closeAdmin(){window.location.hash=''}
+window.addEventListener('hashchange',checkAdmin);
+window.addEventListener('load',checkAdmin);
+function adminLogin(){var e=document.getElementById('admEmail').value.trim();var p=document.getElementById('admPass').value;if(e===ADM_EMAIL&&p===ADM_PASS){document.getElementById('adminLogin').classList.add('hidden');document.getElementById('adminDash').classList.remove('hidden');refreshAdmin()}else{alert('Wrong Email or Password!')}}
+function adminLogout(){document.getElementById('adminLogin').classList.remove('hidden');document.getElementById('adminDash').classList.add('hidden');window.location.hash=''}
+function atab(id,el){document.querySelectorAll('.atsec').forEach(function(s){s.classList.add('hidden')});document.getElementById('at-'+id).classList.remove('hidden');document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});el.classList.add('on')}
+function addPrizeRow(){prizeRows.push({pos:'',amt:''});renderPrizeRows()}
+function renderPrizeRows(){var el=document.getElementById('prizeList');if(prizeRows.length===0){el.innerHTML='';return}el.innerHTML=prizeRows.map(function(p,i){return '<div style="display:flex;gap:6px;margin-bottom:6px"><input type="text" id="pos'+i+'" placeholder="Position" value="'+p.pos+'" style="flex:1"><input type="number" id="amt'+i+'" placeholder="Rs" value="'+p.amt+'" style="flex:1"><button class="abtn rj" onclick="delPrizeRow('+i+')">X</button></div>'}).join('')}
+function delPrizeRow(i){prizeRows.splice(i,1);renderPrizeRows()}
+function collectPrizes(){var arr=[];for(var i=0;i<prizeRows.length;i++){var pos=document.getElementById('pos'+i).value;var amt=document.getElementById('amt'+i).value;if(pos&&amt)arr.push({pos:pos,amt:amt})}return arr}
+function createTour(){var t={id:Date.now(),title:document.getElementById('tTitle').value,map:document.getElementById('tMap').value,type:document.getElementById('tType').value,entryType:document.getElementById('tEntryType').value,fee:document.getElementById('tFee').value,prize:document.getElementById('tPrize').value,kill:document.getElementById('tKill').value,slots:parseInt(document.getElementById('tSlots').value)||60,time:document.getElementById('tTime').value,roomId:document.getElementById('tRoomId').value,roomPass:document.getElementById('tRoomPass').value,joined:0,prizes:collectPrizes()};if(!t.title){alert('Enter title');return}tours.push(t);prizeRows=[];renderPrizeRows();saveAll();renderTours();renderAdminTours();refreshOverview();alert('Tournament Created!');document.getElementById('tTitle').value='';document.getElementById('tTime').value='';document.getElementById('tRoomId').value='';document.getElementById('tRoomPass').value=''}
+function editTour(id){var t=tours.find(function(x){return x.id===id});if(!t)return;editId=id;document.getElementById('editTitle').textContent=t.title;document.getElementById('edRoomId').value=t.roomId||'';document.getElementById('edRoomPass').value=t.roomPass||'';document.getElementById('edPrize').value=t.prize||'';document.getElementById('edKill').value=t.kill||'';document.getElementById('edSlots').value=t.slots||'';document.getElementById('edTime').value=t.time||'';openMo('editMo')}
+function saveEdit(){var t=tours.find(function(x){return x.id===editId});if(!t)return;t.roomId=document.getElementById('edRoomId').value;t.roomPass=document.getElementById('edRoomPass').value;t.prize=document.getElementById('edPrize').value;t.kill=document.getElementById('edKill').value;t.slots=parseInt(document.getElementById('edSlots').value)||t.slots;t.time=document.getElementById('edTime').value;saveAll();closeMo('editMo');renderAdminTours();renderTours();alert('Tournament Updated!')}
+function showPositions(id){var t=tours.find(function(x){return x.id===id});if(!t)return;if(!t.prizes||t.prizes.length===0){alert('No prize positions set for this tournament.');return}document.getElementById('posTitle').textContent=t.title;var html='';for(var i=0;i<t.prizes.length;i++){html+='<div class="prize-row"><span style="color:#ffaa00;font-weight:bold">'+t.prizes[i].pos+'</span><span style="color:#00ff88;font-weight:bold">Rs '+t.prizes[i].amt+'</span></div>'}document.getElementById('posContent').innerHTML=html;openMo('positionsMo')}
+function renderTours(){var el=document.getElementById('tournamentList');if(tours.length===0){el.innerHTML='<div class="card"><h3>No tournaments yet</h3><p style="color:#8899bb;font-size:12px">Admin will add soon</p></div>';return}el.innerHTML=tours.map(function(t){var f=t.entryType==='free';var joined=myTours.find(function(m){return m.id===t.id});var isFull=(t.joined>=t.slots);var btnText,btnClass,disabled;if(joined){btnText='Joined';btnClass='joined';disabled='disabled'}else if(isFull){btnText='Room Full';btnClass='full';disabled='disabled'}else{btnText=f?'Join Free':'Join for Rs '+t.fee;btnClass=f?'free':'paid';disabled='onclick="joinTour('+t.id+')"'}return '<div class="card '+(f?'free':'')+'"><span class="tb '+(f?'free':'paid')+'">'+(f?'Free Entry':'Paid Entry')+'</span><h3>'+t.title+'</h3><div class="tags"><span class="tag ts">'+t.type+'</span><span class="tag tm">'+t.map+'</span><span class="tag tt">'+(t.time||'TBA')+'</span></div><div class="sr"><div class="s"><div class="sl">Prize</div><div class="sv g">Rs '+(t.prize||0)+'</div></div><div class="s"><div class="sl">Per Kill</div><div class="sv b">Rs '+(t.kill||0)+'</div></div><div class="s"><div class="sl">Slots</div><div class="sv">'+t.joined+'/'+t.slots+'</div></div></div><button class="jb '+btnClass+'" '+disabled+'>'+btnText+'</button><div class="row2"><button class="jb paid" onclick="showRoom('+t.id+')">Room ID & Pass</button><button class="jb paid" style="background:linear-gradient(135deg,#ffaa00,#ff6600)" onclick="showPositions('+t.id+')">Prize Positions</button></div></div>'}).join('')}
+function showRoom(id){var t=tours.find(function(x){return x.id===id});if(!t)return;var joined=myTours.find(function(m){return m.id===t.id});if(!joined){alert('Join first to see room details');return}if(!t.roomId){alert('Room details not posted yet. Wait for admin.');return}alert('ROOM DETAILS\n\nTournament: '+t.title+'\nRoom ID: '+t.roomId+'\nPassword: '+t.roomPass)}
+function joinTour(id){var t=tours.find(function(x){return x.id===id});if(!t)return;var found=myTours.find(function(m){return m.id===t.id});if(found){alert('You have already joined this tournament!');return}if(t.joined>=t.slots){alert('Room Full! No slots left.');return}if(t.entryType==='paid'){var fee=parseInt(t.fee)||0;if(walletBal<fee){alert('Insufficient balance! Need Rs '+fee+'. Your wallet: Rs '+walletBal);return}if(!confirm('Join '+t.title+' for Rs '+fee+'?'))return;walletBal-=fee;updateWallet()}joinId=id;document.getElementById('joinTitle').textContent=t.title;openMo('joinMo')}
+function submitJoin(){var uid=document.getElementById('jUid').value.trim();var nm=document.getElementById('jName').value.trim();var wa=document.getElementById('jWa').value.trim();if(!uid||!nm||!wa){alert('All fields required');return}var t=tours.find(function(x){return x.id===joinId});if(!t)return;var found=myTours.find(function(m){return m.id===t.id});if(found){alert('Already joined!');return}myTours.push({id:t.id,uid:uid,name:nm,wa:wa,tourName:t.title,time:new Date().toLocaleString()});t.joined=(t.joined||0)+1;saveAll();alert('Successfully Joined '+t.title+'!');closeMo('joinMo');renderMyTours();renderTours();renderAdminTours();renderJoinedPlayers();refreshOverview();document.getElementById('jUid').value='';document.getElementById('jName').value='';document.getElementById('jWa').value=''}
+  function openMonthlyJoin(){if(!monthly.title){alert('Monthly Tournament - Stay tuned!');return}var found=myTours.find(function(m){return m.tourName==='[MONTHLY] '+monthly.title});if(found){alert('You have already joined this Monthly Tournament!');return}document.getElementById('mjTitle').textContent=monthly.title;document.getElementById('mjFee').textContent='Rs '+monthly.fee;document.getElementById('mjPrize').textContent='Rs '+monthly.prize;document.getElementById('mjDate').textContent=monthly.date||'TBA';openMo('monthlyJoinMo')}
+function confirmMonthlyJoin(){var uid=document.getElementById('mjUid').value.trim();var nm=document.getElementById('mjName').value.trim();var wa=document.getElementById('mjWa').value.trim();if(!uid||!nm||!wa){alert('All fields required');return}var fee=monthly.fee||0;if(fee>0){if(walletBal<fee){alert('Insufficient balance! Need Rs '+fee);return}if(!confirm('Join '+monthly.title+' for Rs '+fee+'?'))return;walletBal-=fee;updateWallet()}myTours.push({id:'M_'+Date.now(),uid:uid,name:nm,wa:wa,tourName:'[MONTHLY] '+monthly.title,time:new Date().toLocaleString(),monthly:true});saveAll();alert('Successfully Joined Monthly Tournament!');closeMo('monthlyJoinMo');document.getElementById('mjUid').value='';document.getElementById('mjName').value='';document.getElementById('mjWa').value='';renderMyTours();renderJoinedPlayers()}
+function renderMyTours(){var el=document.getElementById('myTours');if(myTours.length===0){el.innerHTML='No tournaments joined yet';el.className='empty';return}el.className='';el.innerHTML=myTours.map(function(m){if(m.monthly){var roomInfo=monthly.roomId?'<p style="color:#00ff88"><b>Room ID:</b> '+monthly.roomId+' | <b>Pass:</b> '+monthly.roomPass+'</p>':'<p style="color:#ffaa00">Room details pending...</p>';return '<div class="ac" style="border-color:rgba(255,170,0,.5)"><b style="color:#ffaa00">'+m.tourName+'</b><p>UID: '+m.uid+' | Name: '+m.name+'</p><p>WA: '+m.wa+'</p>'+roomInfo+'<p style="color:#ffcc00;font-size:11px">VIP Monthly</p></div>'}var t=tours.find(function(x){return x.id===m.id});if(!t)return '';return '<div class="ac" style="border-color:rgba(0,150,255,.3)"><b>'+t.title+'</b><p>UID: '+m.uid+' | Name: '+m.name+'</p><p>WA: '+m.wa+'</p>'+(t.roomId?'<p style="color:#00ff88"><b>Room ID:</b> '+t.roomId+' | <b>Pass:</b> '+t.roomPass+'</p>':'<p style="color:#ffaa00">Room details pending...</p>')+'</div>'}).join('')}
+function renderMyRedeem(){var el=document.getElementById('myRedeemList');if(redeemRequests.length===0){el.innerHTML='No redeem requests yet';el.className='empty';return}el.className='';el.innerHTML=redeemRequests.map(function(r){var status=r.code?'<p style="color:#00ff88;font-weight:bold">Code: '+r.code+'</p>':'<p style="color:#ffaa00">Waiting for admin to send code...</p>';return '<div class="ac" style="border-color:rgba(255,170,0,.4)"><b>Rs '+r.amount+' Redeem Request</b><p style="font-size:11px">'+r.time+'</p>'+status+'</div>'}).join('')}
+function renderJoinedPlayers(){var el=document.getElementById('joinedList');if(myTours.length===0){el.innerHTML='No players yet';return}el.innerHTML=myTours.map(function(m){return '<div class="ac" style="border-color:rgba(0,150,255,.3)"><p><b>Tournament:</b> '+m.tourName+'</p><p><b>Name:</b> '+m.name+'</p><p><b>UID:</b> '+m.uid+'</p><p><b>WhatsApp:</b> '+m.wa+'</p><p><b>Time:</b> '+m.time+'</p></div>'}).join('')}
+function renderAdminTours(){var el=document.getElementById('adminTourList');if(tours.length===0){el.innerHTML='No tournaments yet';return}el.innerHTML=tours.map(function(t){return '<div class="ac"><h4>'+t.title+'</h4><p>Map: '+t.map+' | Type: '+t.type+' | Entry: '+(t.entryType==='free'?'Free':'Rs '+t.fee)+'</p><p>Prize: Rs '+t.prize+' | Kill: Rs '+t.kill+' | Slots: '+t.joined+'/'+t.slots+'</p><p>Time: '+(t.time||'TBA')+'</p><p>Room ID: '+(t.roomId||'Not set')+' | Pass: '+(t.roomPass||'Not set')+'</p><button class="abtn ed" onclick="editTour('+t.id+')">Edit</button><button class="abtn rj" onclick="delTour('+t.id+')">Delete</button></div>'}).join('')}
+function delTour(id){if(!confirm('Delete this tournament?'))return;tours=tours.filter(function(t){return t.id!==id});saveAll();renderAdminTours();renderTours();refreshOverview()}
+function refreshOverview(){document.getElementById('ovTours').textContent=tours.length;document.getElementById('ovPlayers').textContent=myTours.length;document.getElementById('ovDeps').textContent=deposits.length;document.getElementById('ovWds').textContent=withdrawals.length;document.getElementById('ovRedeem').textContent=redeemRequests.length;document.getElementById('ovRules').textContent=rulesTxt?1:0}
+function refreshAdmin(){renderAdminTours();renderJoinedPlayers();renderDeposits();renderWithdrawals();renderRedeemRequests();renderBonusHistory();refreshOverview();renderMonthlyAdmin()}
+function updateWallet(){document.getElementById('walletBal').textContent='Rs '+walletBal;document.getElementById('walletBadge').textContent='Rs '+walletBal;saveAll()}
+function watchAd(){if(bonusUsed){alert('You have already used the bonus once. It can only be used one time.');return}if(!bonusSettings.adLink){alert('Bonus not set by admin yet.');return}var reward=bonusSettings.reward||1;var ok=confirm('Watch ad to earn Rs '+reward+'?\n\nThis bonus can be used only ONE TIME.');if(!ok)return;var w=window.open(bonusSettings.adLink,'_blank');alert('Ad khul gaya hai. Pura ad dekho, phir wapas aao.\n\nRs '+reward+' automatically add ho jayenge 10 second baad.');setTimeout(function(){walletBal+=reward;bonusUsed=true;saveAll();updateWallet();alert('Ad Complete!\nRs '+reward+' added to your wallet.\n\nNow bonus can not be used again.');document.getElementById('watchAdBtn').disabled=true;document.getElementById('watchAdBtn').textContent='Already Used';document.getElementById('bonusUsedMsg').style.display='block'},10000)}
+function saveMonthly(){monthly.title=document.getElementById('mTitle').value||'Monthly Tournament';monthly.fee=parseInt(document.getElementById('mFee').value)||0;monthly.prize=parseInt(document.getElementById('mPrize').value)||0;monthly.date=document.getElementById('mDate').value||'';monthly.desc=document.getElementById('mDesc').value||'Last Sunday of every month';saveAll();renderMonthly();renderMonthlyAdmin();alert('Monthly Tournament saved!')}
+function renderMonthly(){document.getElementById('monthlyInfo').textContent=monthly.desc+(monthly.prize?' | Prize Rs '+monthly.prize:'');var banner=document.getElementById('monthlyBanner');banner.querySelector('.tag-line').textContent=monthly.date?monthly.date:'COMING SOON'}
+function renderMonthlyAdmin(){var el=document.getElementById('monthlyAdminView');if(!monthly.title){el.innerHTML='Not set yet';return}el.innerHTML='<p><b>Title:</b> '+monthly.title+'</p><p><b>Fee:</b> Rs '+monthly.fee+'</p><p><b>Prize:</b> Rs '+monthly.prize+'</p><p><b>Date:</b> '+monthly.date+'</p><p><b>Room ID:</b> '+(monthly.roomId||'Not set')+'</p><p><b>Room Pass:</b> '+(monthly.roomPass||'Not set')+'</p>'}
+function openMonthlyEdit(){document.getElementById('medRoomId').value=monthly.roomId||'';document.getElementById('medRoomPass').value=monthly.roomPass||'';openMo('monthlyEditMo')}
+function saveMonthlyRoom(){monthly.roomId=document.getElementById('medRoomId').value;monthly.roomPass=document.getElementById('medRoomPass').value;saveAll();closeMo('monthlyEditMo');renderMonthlyAdmin();renderMyTours();alert('Monthly Room Details Saved!')}
+function saveBonusSettings(){bonusSettings.adLink=document.getElementById('bAdLink').value;bonusSettings.reward=parseInt(document.getElementById('bReward').value)||1;bonusSettings.desc=document.getElementById('bDesc').value||'Watch ads & earn rewards';saveAll();document.getElementById('bonusDesc').textContent=bonusSettings.desc;document.getElementById('bonusInfo').textContent=bonusSettings.adLink?'Click "Watch Ad & Earn" to earn Rs '+bonusSettings.reward:'Ad link not set';document.getElementById('bonusRewardInfo').textContent='Earn Rs '+bonusSettings.reward+' per ad';alert('Bonus settings saved!')}
+function giveBonus(){var nm=document.getElementById('gbName').value.trim();var amt=parseInt(document.getElementById('gbAmt').value);var rs=document.getElementById('gbReason').value||'Bonus';if(!nm||!amt){alert('Enter name and amount');return}bonusHistory.push({name:nm,amt:amt,reason:rs,time:new Date().toLocaleString()});saveAll();renderBonusHistory();alert('Rs '+amt+' bonus given to '+nm);document.getElementById('gbName').value='';document.getElementById('gbAmt').value='';document.getElementById('gbReason').value=''}
+function renderBonusHistory(){var el=document.getElementById('bonusHistory');if(bonusHistory.length===0){el.innerHTML='No bonuses given yet';return}el.innerHTML=bonusHistory.map(function(b){return '<div class="ac" style="border-color:rgba(0,150,255,.3)"><p><b>'+b.name+'</b> - Rs '+b.amt+'</p><p>'+b.reason+' | '+b.time+'</p></div>'}).join('')}
+function submitRedeem(){var a=parseInt(document.getElementById('rdAmt').value);var w=document.getElementById('rdWa').value.trim();var u=document.getElementById('rdUpi').value.trim();if(!a||a<1){alert('Enter amount');return}if(!w){alert('Enter WhatsApp number');return}if(a>walletBal){alert('Insufficient balance! Your wallet: Rs '+walletBal+'\n\nYou cannot redeem more than your balance.');return}if(!confirm('Redeem Rs '+a+'? This amount will be deducted from your wallet.'))return;walletBal-=a;updateWallet();redeemRequests.push({id:Date.now(),amount:a,wa:w,upi:u||'Not provided',player:'Dakshu',time:new Date().toLocaleString(),code:'',status:'pending'});saveAll();alert('Request submitted!\nRs '+a+' deducted from wallet.\nAdmin will send you a redeem code soon.');closeMo('redeemMo');document.getElementById('rdAmt').value='';document.getElementById('rdWa').value='';document.getElementById('rdUpi').value='';renderRedeemRequests();renderMyRedeem()}
+function renderRedeemRequests(){var el=document.getElementById('redeemList');if(redeemRequests.length===0){el.innerHTML='No requests yet';return}el.innerHTML=redeemRequests.map(function(r){return '<div class="ac"><h4>Rs '+r.amount+' - '+r.player+'</h4><p>WhatsApp: '+r.wa+'</p><p>UPI: '+r.upi+'</p><p>'+r.time+'</p>'+(r.code?'<p style="color:#00ff88"><b>Code Sent:</b> '+r.code+'</p>':'<div class="ig"><label>Enter Redeem Code</label><input type="text" id="code'+r.id+'" placeholder="e.g. D7FF-ABC123"></div><button class="abtn ap" onclick="sendCode('+r.id+')">Send Code</button><button class="abtn rj" onclick="rejectRedeem('+r.id+')">Reject & Refund</button>')+'</div>'}).join('')}
+function sendCode(id){var r=redeemRequests.find(function(x){return x.id==id});if(!r)return;var c=document.getElementById('code'+r.id).value.trim();if(!c){alert('Enter code');return}r.code=c;saveAll();alert('Code sent to '+r.player+'!');renderRedeemRequests();renderMyRedeem()}
+function rejectRedeem(id){var r=redeemRequests.find(function(x){return x.id==id});if(!r)return;if(!confirm('Reject this redeem? Rs '+r.amount+' will be refunded.'))return;walletBal+=r.amount;updateWallet();redeemRequests=redeemRequests.filter(function(x){return x.id!=id});saveAll();alert('Rejected! Rs '+r.amount+' refunded.');renderRedeemRequests();renderMyRedeem();refreshOverview()}
+document.getElementById('depShot').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(ev){document.getElementById('depPrev').innerHTML='<img src="'+ev.target.result+'" class="shot-preview">'};r.readAsDataURL(f)});
+document.getElementById('wdQr').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(ev){document.getElementById('wdPrev').innerHTML='<img src="'+ev.target.result+'" class="shot-preview">'};r.readAsDataURL(f)});
+function submitDep(){var a=parseInt(document.getElementById('depAmt').value);var s=document.getElementById('depShot').files[0];if(!a||a<30){alert('Minimum Rs 30');return}if(!s){alert('Upload screenshot');return}var r=new FileReader();r.onload=function(e){deposits.push({id:Date.now(),amount:a,shot:e.target.result,player:'Dakshu',time:new Date().toLocaleString(),status:'pending'});saveAll();alert('Submitted! Wait for approval.');closeMo('depMo');document.getElementById('depAmt').value='';document.getElementById('depShot').value='';document.getElementById('depPrev').innerHTML='';renderDeposits();refreshOverview()};r.readAsDataURL(s)}
+function renderDeposits(){var el=document.getElementById('depoList');if(deposits.length===0){el.innerHTML='No pending requests';return}el.innerHTML=deposits.map(function(d){return '<div class="ac"><h4>Rs '+d.amount+' - '+d.player+'</h4><p>'+d.time+'</p><button class="abtn ed" onclick="viewShot('+d.id+')">View</button><button class="abtn ap" onclick="approveDep('+d.id+')">Paid</button><button class="abtn rj" onclick="rejectDep('+d.id+')">Reject</button></div>'}).join('')}
+function viewShot(id){var d=deposits.find(function(x){return x.id==id});if(!d)return;document.getElementById('ssContent').innerHTML='<img src="'+d.shot+'" class="shot-preview">';openMo('ssMo')}
+function approveDep(id){var d=deposits.find(function(x){return x.id==id});if(!d)return;walletBal+=d.amount;updateWallet();deposits=deposits.filter(function(x){return x.id!=id});saveAll();alert('Approved! Rs '+d.amount+' added to wallet.');renderDeposits();refreshOverview()}
+function rejectDep(id){deposits=deposits.filter(function(x){return x.id!=id});saveAll();alert('Rejected');renderDeposits();refreshOverview()}
+function submitWd(){var a=parseInt(document.getElementById('wdAmt').value);var u=document.getElementById('wdUpi').value.trim();var q=document.getElementById('wdQr').files[0];if(!a||a<100){alert('Minimum Rs 100');return}if(a>walletBal){alert('Insufficient balance! Your wallet: Rs '+walletBal);return}if(!u){alert('Enter UPI');return}if(!q){alert('Upload QR');return}var r=new FileReader();r.onload=function(e){withdrawals.push({id:Date.now(),amount:a,upi:u,qr:e.target.result,player:'Dakshu',time:new Date().toLocaleString(),status:'pending'});walletBal-=a;updateWallet();saveAll();alert('Request sent!\nRs '+a+' deducted from wallet.\nContact: 8130399930');closeMo('wdMo');document.getElementById('wdAmt').value='';document.getElementById('wdUpi').value='';document.getElementById('wdQr').value='';document.getElementById('wdPrev').innerHTML='';renderWithdrawals();refreshOverview()};r.readAsDataURL(q)}
+function renderWithdrawals(){var el=document.getElementById('wdList');if(withdrawals.length===0){el.innerHTML='No pending requests';return}el.innerHTML=withdrawals.map(function(w){return '<div class="ac"><h4>Rs '+w.amount+' - '+w.player+'</h4><p>UPI: '+w.upi+'</p><p>'+w.time+'</p><button class="abtn ed" onclick="viewWdQr('+w.id+')">View QR</button><button class="abtn ap" onclick="approveWd('+w.id+')">Paid</button><button class="abtn rj" onclick="rejectWd('+w.id+')">Reject</button></div>'}).join('')}
+function viewWdQr(id){var w=withdrawals.find(function(x){return x.id==id});if(!w)return;document.getElementById('ssContent').innerHTML='<img src="'+w.qr+'" class="shot-preview">';openMo('ssMo')}
+function approveWd(id){withdrawals=withdrawals.filter(function(x){return x.id!=id});saveAll();alert('Marked as paid!');renderWithdrawals();refreshOverview()}
+function rejectWd(id){var w=withdrawals.find(function(x){return x.id==id});if(!w)return;if(!confirm('Reject? Rs '+w.amount+' will be refunded.'))return;walletBal+=w.amount;updateWallet();withdrawals=withdrawals.filter(function(x){return x.id!=id});saveAll();alert('Rejected! Rs '+w.amount+' refunded.');renderWithdrawals();refreshOverview()}
+function saveRules(){rulesTxt=document.getElementById('rulesTxt').value;saveAll();document.getElementById('rulesContent').textContent=rulesTxt||'No rules set yet';refreshOverview();alert('Rules saved!')}
+function shareRef(){var c=document.getElementById('refCode').textContent;var m='Join D7 FF! Use code: '+c+'. Pay Rs 30 & I get Rs 20!';window.open('https://wa.me/?text='+encodeURIComponent(m))}
+renderTours();
+updateWallet();
+renderMonthly();
+renderMonthlyAdmin();
+renderMyTours();
+renderMyRedeem();
+renderRedeemRequests();
+renderBonusHistory();
+document.getElementById('bonusDesc').textContent=bonusSettings.desc;
+document.getElementById('bonusInfo').textContent=bonusSettings.adLink?'Click "Watch Ad & Earn" to earn Rs '+bonusSettings.reward:'Ad link not set';
+document.getElementById('bonusRewardInfo').textContent='Earn Rs '+bonusSettings.reward+' per ad';
+if(rulesTxt)document.getElementById('rulesContent').textContent=rulesTxt;
+if(bonusUsed){document.getElementById('watchAdBtn').disabled=true;document.getElementById('watchAdBtn').textContent='Already Used';document.getElementById('bonusUsedMsg').style.display='block'}
+</script>
+</body>
+</html>
