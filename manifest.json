@@ -1,0 +1,22 @@
+{
+  "name": "D7 FF Arena - Free Fire Tournaments",
+  "short_name": "D7 FF Arena",
+  "description": "Free Fire tournaments khelo aur real cash jeeto",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05050a",
+  "theme_color": "#0066FF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=d7ff",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=d7ff",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
