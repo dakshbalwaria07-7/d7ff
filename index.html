@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Prime Battle - Free Fire Tournaments</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.png">
+<meta name="theme-color" content="#a020f0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Rajdhani',Arial,sans-serif}
+body{background:#0a0618;background-image:radial-gradient(circle at 20% 0%,rgba(160,32,240,.2),transparent 50%),radial-gradient(circle at 80% 100%,rgba(0,150,255,.15),transparent 50%);color:#fff;min-height:100vh;padding:16px;text-align:center;overflow-x:hidden}
+.h{display:flex;align-items:center;gap:10px;padding:8px 0;margin-bottom:16px}
+.h img{width:44px;height:44px;border-radius:8px;border:1px solid rgba(0,200,255,.4)}
+.h-t{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;background:linear-gradient(90deg,#00ccff,#a020f0,#ff0066,#00ccff);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:flow 3s linear infinite;letter-spacing:1px}
+@keyframes flow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+.hero{width:100%;border-radius:16px;margin-bottom:18px;box-shadow:0 0 30px rgba(160,32,240,.5);border:1px solid rgba(160,32,240,.4)}
+.badge{display:inline-block;background:linear-gradient(90deg,#ff0066,#a020f0);padding:6px 16px;border-radius:20px;font-size:10px;font-weight:900;letter-spacing:1.5px;margin-bottom:14px;font-family:'Orbitron',sans-serif;box-shadow:0 0 15px rgba(255,0,102,.4)}
+h1{font-family:'Orbitron',sans-serif;font-size:24px;font-weight:900;line-height:1.3;margin-bottom:12px;letter-spacing:1px}
+h1 span{color:#ff0066;text-shadow:0 0 15px rgba(255,0,102,.8)}
+p.desc{font-size:14px;color:#a0a0c0;line-height:1.6;margin-bottom:20px;padding:0 6px}
+.btn-install{display:block;width:100%;padding:18px;background:linear-gradient(135deg,#ff0066,#a020f0);border:none;border-radius:14px;color:#fff;font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;letter-spacing:1.5px;text-decoration:none;margin-bottom:12px;box-shadow:0 0 25px rgba(255,0,102,.5);cursor:pointer;position:relative;overflow:hidden}
+.btn-install::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shine 2s infinite}
+@keyframes shine{0%{left:-100%}100%{left:100%}}
+.btn-wa{display:block;width:100%;padding:16px;background:linear-gradient(135deg,#1a0a30,#0a0618);border:2px solid #00cc66;border-radius:14px;color:#00cc66;font-family:'Orbitron',sans-serif;font-size:13px;font-weight:900;text-decoration:none;letter-spacing:1px;margin-bottom:20px;box-shadow:0 0 15px rgba(0,204,102,.3)}
+.features{background:linear-gradient(135deg,#1a0a30,#0a0618);border:1px solid rgba(160,32,240,.4);border-radius:14px;padding:16px;text-align:left;margin-bottom:16px}
+.features div{display:flex;align-items:center;gap:12px;padding:10px 0;font-size:13px;font-weight:600;border-bottom:1px solid rgba(160,32,240,.15)}
+.features div:last-child{border-bottom:none}
+.features .ic{font-size:20px;width:26px;text-align:center}
+.mock{background:linear-gradient(135deg,#1a0a30,#0a0618);border:1px solid rgba(160,32,240,.5);border-radius:16px;padding:18px;margin-bottom:16px;text-align:left;box-shadow:0 0 30px rgba(160,32,240,.3)}
+.mock-badge{display:inline-block;background:linear-gradient(135deg,#ff0066,#a020f0);padding:4px 10px;border-radius:6px;font-size:10px;font-weight:900;margin-bottom:8px;letter-spacing:1px;font-family:'Orbitron',sans-serif}
+.mock h3{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:900;margin-bottom:12px;text-align:center;color:#fff}
+.mock-stats{display:flex;background:#0a0618;border-radius:8px;padding:10px;margin-bottom:10px}
+.mock-stats div{flex:1;text-align:center}
+.mock-stats .lb{font-size:9px;color:#a0a0c0;letter-spacing:1px}
+.mock-stats .vl{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:900;color:#00ccff;margin-top:3px}
+.slot-bar{height:6px;background:rgba(160,32,240,.2);border-radius:3px;overflow:hidden;margin-bottom:8px}
+.slot-fill{height:100%;background:linear-gradient(90deg,#ff0066,#a020f0);width:80%}
+.mock-slots{font-size:11px;color:#a0a0c0;text-align:center;margin-bottom:10px}
+.mock-slots b{color:#fff}
+.mock-slots span{color:#ff0066}
+.mock-join{width:100%;padding:12px;background:linear-gradient(135deg,#ff0066,#a020f0);border:none;border-radius:8px;color:#fff;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:900;letter-spacing:1px}
+.footer{font-size:11px;color:#556688;margin-top:20px;padding-bottom:20px}
+</style></head><body>
+
+<div class="h"><img src="icon.png"><div class="h-t">PRIME BATTLE</div></div>
+
+<img src="Splash.jpg" class="hero" onerror="this.style.display='none'">
+
+<div class="badge">🔥 INDIA'S #1 FREE FIRE TOURNAMENT APP</div>
+<h1>DOMINATE THE <span>ARENA</span>.<br>WIN REAL CASH DAILY.</h1>
+<p class="desc">Compete in daily Free Fire tournaments. Score kills, claim Booyah, and withdraw your winnings instantly via UPI. Zero delay, 100% fair play.</p>
+
+<button id="installBtn" class="btn-install" onclick="openApp()">📱 INSTALL APP NOW</button>
+<a href="https://wa.me/919530218603" class="btn-wa">💬 JOIN WHATSAPP COMMUNITY</a>
+
+<div class="features">
+<div><span class="ic">⚡</span><span>Instant UPI Payouts</span></div>
+<div><span class="ic">🛡️</span><span>100% Anti-Cheat System</span></div>
+<div><span class="ic">💀</span><span>Per-Kill Cash Rewards</span></div>
+<div><span class="ic">🎮</span><span>Daily Free Fire Matches</span></div>
+<div><span class="ic">🏆</span><span>Real Cash Prizes</span></div>
+</div>
+
+<div class="mock">
+<div class="mock-badge">🔥 FREE FIRE SCRIMS</div>
+<h3>Daily Bermuda Championship</h3>
+<div class="mock-stats">
+<div><div class="lb">PRIZE POOL</div><div class="vl" style="color:#ffaa00">₹5,000</div></div>
+<div><div class="lb">PER KILL</div><div class="vl" style="color:#00ff88">₹90</div></div>
+<div><div class="lb">ENTRY</div><div class="vl" style="color:#ff0066">₹80</div></div>
+</div>
+<div class="slot-bar"><div class="slot-fill"></div></div>
+<div class="mock-slots"><b>39/48</b> Joined | <span>9 Spots Left</span></div>
+<button class="mock-join">JOIN MATCH NOW</button>
+</div>
+
+<div class="footer">Prime Battle © 2026 | Made in India 🇮🇳</div>
+
+<script>
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e});
+function openApp(){
+if(deferredPrompt){
+deferredPrompt.prompt();
+deferredPrompt.userChoice.then(function(c){deferredPrompt=null});
+}else{
+location.href='app.html';
+}
+}
+</script>
+
+</body></html>
